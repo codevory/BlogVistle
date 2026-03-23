@@ -13,7 +13,6 @@ import { X } from 'lucide-react';
 import { dumy } from '../dumy-data/dumy-posts'
 
 const Home = () => {
-
   const [boxOpen, setboxOpen] = useState(false);
   const [searchQuery, setsearchQuery] = useState("")
   const [sortedOrder, setSortedOrder] = useState("newest")
@@ -25,24 +24,29 @@ const Home = () => {
     setboxOpen(!boxOpen)
   }
 
-
-
-  //fetch posts from localStorage
-  const postData = JSON.parse(localStorage.getItem("postData"))
-
+  
   //save dumy posts to localstorage if not exists already in localstorage.
   useEffect(() => {
-    if (!postData) {
-      localStorage.setItem("postData", JSON.stringify(dumy))
-    }
+    localStorage.setItem("postData", JSON.stringify(dumy))
+    if (window.innerWidth < 350) {
+      alert("Kindly turn on the desktop mode for better view")
+     }
   }, [])
 
+  //fetch posts from localStorage
+  let postData = JSON.parse(localStorage.getItem("postData")) 
+  
 
   //if no post found this div appears.
   if (!postData) {
     return (
-      <div className="flex justify-center items-center text-center w-full min-h-10 bg-red-400 text-white">
+      <div className="flex flex-col gap-3 justify-center items-center text-center w-full min-h-20 bg-red-400 text-white">
         <p className="font-semibold mr-4 ">No Post Found, Kindly post something from  <a className="text-blue-700 text-xl font-bold" href='/post'>Here</a></p>
+        <div>
+          <span className='text-green-700 text-[16px] font-bold rounded-[9px] p-2 bg-black'>
+            <a href='/' >fetch posts</a>
+          </span>
+        </div>
       </div>
     )
   }
@@ -57,13 +61,6 @@ const Home = () => {
         sortedOrder == "newest" ? b.createdAt - a.createdAt : a.createdAt - b.createdAt
       )
   }, [postData, searchQuery, categoryFilter, sortedOrder])
-
-  //check device width.
-   useEffect(() => {
-    if (window.innerWidth < 350) {
-      alert("Kindly turn on the desktop mode for better view")
-     }
-   },[])
 
 
   //If post not matched on search will return paragraph
