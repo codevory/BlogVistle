@@ -3,11 +3,13 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import ThemeContext from './components/Theme/ThemeContext.jsx'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 createRoot(document.getElementById('root')).render(
   <ThemeContext>
     <BrowserRouter>
       <App />
+     <SpeedInsights />
     </BrowserRouter>
   </ThemeContext>
 )
