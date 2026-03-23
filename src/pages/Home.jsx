@@ -10,7 +10,7 @@ import Logo from '/logoVistle.png'
 import { useTheme } from '../components/Theme/ThemeContext'
 import CreatePost from '../components/PostComponents/CreatePost'
 import { X } from 'lucide-react';
-import { dumy } from '../dumy-data/dumy-posts'
+import { dumy } from '../../public/dumy-data/dumy-posts'
 
 const Home = () => {
   const [boxOpen, setboxOpen] = useState(false);
