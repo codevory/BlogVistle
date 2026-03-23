@@ -25,8 +25,8 @@ const MobileMenu = ({ isOn, Cbfunction }) => {
         <Link to={`/`} aria-label='Notifications' className={`cursor-pointer inline-flex rounded-full  gap-2 font-medium active:font-bold active:scale-95 text-[15px]  px-3 py-1.5  
        ${isDark ? 'hover:bg-zinc-700' : ' hover:bg-zinc-300 '} `}>{<Bell size={20} />} <span>Notifications</span></Link>
 
-        <div aria-label='Trending' className={`cursor-pointer inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-95 text-[15px]  px-3 py-1.5  
-       ${isDark ? 'hover:bg-zinc-700' : ' hover:bg-zinc-300 '}  `}>{<TrendingUp size={20} />} <span>Trending</span></div>
+        <Link to={`/trending`} aria-label='Trending' className={`cursor-pointer inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-95 text-[15px]  px-3 py-1.5  
+       ${isDark ? 'hover:bg-zinc-700' : ' hover:bg-zinc-300 '}  `}>{<TrendingUp size={20} />} <span>Trending</span></Link>
 
         <div aria-label='Follow' className={`cursor-pointer  inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-95 text-[15px]  px-3 py-1.5  
        ${isDark ? 'hover:bg-zinc-700' : ' hover:bg-zinc-300 '}`}>{<UserPlus size={20} />} <span>Follow</span></div>
@@ -42,7 +42,7 @@ const MobileMenu = ({ isOn, Cbfunction }) => {
             <img src={userLogo} alt='user Profile' className='size-6 rounded-full'></img>
 
             <div className='flex flex-col '>
-              <span className=' font-medium  text-[10px] sm:text-[12px] '>Shahijahan Pedhar</span>
+              <span className=' font-medium  text-[9px] sm:text-[10px] '>Shahijahan Pedhar</span>
               <span className='font-sans text-[8px] md:text-[10px] text-gray-600'>@shahijahanQ</span>
             </div>
 
