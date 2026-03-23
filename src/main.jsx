@@ -4,14 +4,14 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import ThemeContext from './components/Theme/ThemeContext.jsx'
 import { SpeedInsights } from "@vercel/speed-insights/react"
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 createRoot(document.getElementById('root')).render(
   <ThemeContext>
     <BrowserRouter>
       <App />
-     <SpeedInsights />
-     <Analytics />
+    <SpeedInsights />
+    <Analytics />
     </BrowserRouter>
   </ThemeContext>
 )
