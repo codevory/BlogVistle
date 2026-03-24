@@ -23,18 +23,20 @@ const Home = () => {
   function DialogToggle() {
     setboxOpen(!boxOpen)
   }
-
+  
+  //fetch posts from localStorage
+  let postData = JSON.parse(localStorage.getItem("postData")) 
   
   //save dumy posts to localstorage if not exists already in localstorage.
   useEffect(() => {
-    localStorage.setItem("postData", JSON.stringify(dumy))
+    if(!postData){
+      localStorage.setItem("postData", JSON.stringify(dumy))
+    }
     if (window.innerWidth < 350) {
       alert("Kindly turn on the desktop mode for better view")
      }
   }, [])
 
-  //fetch posts from localStorage
-  let postData = JSON.parse(localStorage.getItem("postData")) 
   
 
   //if no post found this div appears.
